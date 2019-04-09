@@ -1,0 +1,428 @@
+___________________________________Respostas___________________________________
+
+Questão 1:
+
+
+
+===============================================================================
+===============================================================================
+
+Questão 2:
+
+p == &i;          ---> true
+*p - *q;          ---> -2
+**&p;             ---> 3
+3 - *p/(*q) + 7;  ---> 10
+
+
+===============================================================================
+===============================================================================
+
+Questão 3:
+
+ffe 7 5 15 9
+
+===============================================================================
+===============================================================================
+
+Questão 4:
+
+Atribuições ilegais:
+p = i;
+i = (*&)j;
+q = *p;
+
+===============================================================================
+===============================================================================
+
+Questão 5:
+
+*Todos os resultados estão de acordo com o esperado.
+a) 20
+b) 29.0
+c) P
+d) e
+e) P
+f) e
+g) t
+h) 31
+i) 45
+j) 27
+l) 31
+m) 45
+n) 27
+
+===============================================================================
+===============================================================================
+
+Questão 6:
+
+*Todos os resultados entre o vetor e o ponteiro mostrados na tela conferem.
+
+ contador/valor/valor/endereco/endereco
+i = 0vet[0] = 1.1*(f + 0) = 1.1&vet[0] = 9D0F65F0(f + 0) = 9D0F65F0
+i = 1vet[1] = 2.2*(f + 1) = 2.2&vet[1] = 9D0F65F4(f + 1) = 9D0F65F4
+i = 2vet[2] = 3.3*(f + 2) = 3.3&vet[2] = 9D0F65F8(f + 2) = 9D0F65F8
+i = 3vet[3] = 4.4*(f + 3) = 4.4&vet[3] = 9D0F65FC(f + 3) = 9D0F65FC
+i = 4vet[4] = 5.5*(f + 4) = 5.5&vet[4] = 9D0F6600(f + 4) = 9D0F6600
+
+
+===============================================================================
+===============================================================================
+
+Questão 7:
+
+*(pulo + 2)
+
+===============================================================================
+===============================================================================
+
+Questão 8:
+
+p = mat + 1; 
+
+---> A operação soma 1 posição no endereço do vetor, que, como todo vetor, 
+referencia a primeira posição. Assim, p apontará para a segunda posição 
+do vetor.
+
+p = mat++; ---> Não é possível incrementar um endereço de vetor com ++.
+
+p = ++mat; ---> O mesmo erro ocorre aqui.
+
+x = (*mat)++;
+
+---> '*mat' irá retornar o conteúdo da primeira posição do vetor, após isso,
+x recebe esse conteúdo e o valor da primeira posição do vetor é incrementado.
+
+
+===============================================================================
+===============================================================================
+
+Questão 9:
+
+Primeiro Programa:
+Imprime o conteúdo das 3 posições do vetor. Como i varia de 0 a 2, então teremos:
+(vet+0) -> que é o mesmo que vet e aponta pra vet[0];
+(vet+1) -> onde é somada 1 posição do tipo int ao endereço de vet, e como ele 
+já aponta para vet[0], agora aponta para vet[1].
+(vet+2) -> onde é somada 2 posições do tipo int ao endereço de vet, e como ele 
+já aponta para vet[0], agora aponta para vet[2].
+Adicionando o '*', o que será impresso será o conteúdo dessas posições.
+
+Segundo programa:
+Imprime-se os endereços das 3 posições do vetor. Quando se soma um inteiro 'i' 
+(que varia de 0 à 2) ao 'vet', na verdade está somando o endereço de 'vet'
+com a quantidade de bits de um inteiro multiplicado por 'i'. Por isso aparecem
+endereços nessa ordem:
+<Endereço>       <Endereço> + 4       <Endereço> + 8
+
+===============================================================================
+===============================================================================
+
+Questão 10:
+
+> x for declarado como char (1 byte)?
+x+1 -> 4093
+x+2 -> 4094
+x+3 -> 4095
+
+> x for declarado como int (2 byte)?
+x+1 -> 4094
+x+2 -> 4096
+x+3 -> 4098
+
+> x for declarado como float (4 byte)?
+x+1 -> 4096
+x+2 -> 4100
+x+3 -> 4104
+
+> x for declarado como double (8 byte)?
+x+1 -> 4100
+x+2 -> 4108
+x+3 -> 4116
+
+===============================================================================
+===============================================================================
+
+Questão 11:
+
+Programa inplementado:
+
+int main(void) {
+  char   x[4];
+  int    y[4];
+  float  z[4];
+  double w[4];
+
+  printf("Enderecos Char:\n");
+  printf("%ld \n",(long)(x+1));
+  printf("%ld \n",(long)(x+2));
+  printf("%ld \n\n",(long)(x+3));
+
+  printf("Enderecos Int:\n");
+  printf("%ld \n",(long)(y+1));
+  printf("%ld \n",(long)(y+2));
+  printf("%ld \n\n",(long)(y+3));
+
+  printf("Enderecos Float:\n");
+  printf("%ld \n",(long)(z+1));
+  printf("%ld \n",(long)(z+2));
+  printf("%ld \n\n",(long)(z+3));
+
+  printf("Enderecos Double:\n");
+  printf("%ld \n",(long)(w+1));
+  printf("%ld \n",(long)(w+2));
+  printf("%ld \n\n",(long)(w+3));
+  return 0;
+}
+
+****** Ao comparar os resultados do programa acima com os resultados idealizados 
+e usados para responder a questão 10, verificamos que não há diferença entre 
+o que é feito pelo programa e as respostas anteriores. Para cada tipo de variável
+há uma quantidade diferente de bytes sendo somada ao endereço. Entre os tipos de
+variáveis das máquinas reais e os que a questão dá, apenas a quantidade de
+bytes se diferencia.
+
+===============================================================================
+===============================================================================
+
+Questão 12:
+
+Comandos válidos:
+	aloha[2] = value;
+	printf("%f", aloha);
+	pf = aloha;
+
+===============================================================================
+===============================================================================
+
+Questão 13:
+Assim como os ponteiros para variáveis, um ponteiro para função aponta para uma
+função, que pode ser chamada como uma função normal.
+Exemplo de Programa:
+
+int somar(int a, int b){
+  return a+b;
+}
+int subtrair(int a, int b){
+  return a-b;
+}
+int calcula(int a, int b, int (*calc)(int,int)){
+  return calc(a,b);
+}
+
+int main(void) {
+  int n1=6,n2=5;
+  printf("Soma: %d\n", calcula(n1,n2,somar));
+  printf("Subtração: %d\n", calcula(n1,n2,subtrair));
+  return 0;
+}
+
+===============================================================================
+===============================================================================
+
+Questão 14:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  float *v,aux;
+  int n,i,j;
+
+  printf("Quantos valores serão lidos? ");
+  scanf("%d",&n);
+  
+  v = (float *) malloc(n*sizeof(float)); 
+  for(i=0;i<n;i++){
+    printf("Digite o valor real %d/%d: ",i+1,n);
+    scanf("%f",&v[i]);
+  }
+  for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+      if(v[i] <= v[j]){
+        aux=v[i];
+        v[i]=v[j];
+        v[j]=aux;
+      }
+    }
+  }
+  printf("\nValores ordenados: \n");
+  for(i=0;i<n;i++){
+    printf("%.2f\n",v[i]);
+  }
+
+  free(v);
+  return 0;
+}
+
+===============================================================================
+===============================================================================
+
+Questão 15:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int compara (const void * a, const void * b){ //Função que será usada para fazer as comparações no qsort. A função é deixada o mais próxima possível do formato que há no qsort.
+  if(*(float*)a>*(float*)b) return 1;//Se o 1o for maior que o 2o, então retorna um valor maior que 0;
+  else if(*(float*)a==*(float*)b) return 0;//Se o 1o for menor que o 2o, então retorna um valor menor que 0;
+  else if(*(float*)a<*(float*)b) return -1; //Se os dois forem iguais, então retorna 0.
+}
+
+int main(){
+  float *v,aux;
+  int n,i,j;
+
+  printf("Quantos valores serão lidos? ");
+  scanf("%d",&n);
+  
+  v = (float *) malloc(n*sizeof(float)); 
+  for(i=0;i<n;i++){
+    printf("Digite o valor real %d/%d: ",i+1,n);
+    scanf("%f",&v[i]);
+  }
+
+  qsort(v,n, sizeof(float), compara); //qsort será o responsável pela ordenação do vetor. Na ordem, v é o vetor a ser ordenado, n o tamanho do vetor, sizeof(float) o tamanho dos elementos e compara é a função de comparação.
+
+  printf("\nValores ordenados: \n");
+  for(i=0;i<n;i++){
+    printf("%.2f\n",v[i]); //Imprimindo os valores já ordenados.
+  }
+
+  free(v);
+  return 0;
+}
+
+
+===============================================================================
+===============================================================================
+
+Questão 16:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int compara (float a, float b){ //Função que será usada para fazer as comparações para a função de ordenação.
+  if(a>b) return 1;//Se o 1o for maior que o 2o, então retorna um valor maior que 0;
+  else if(a==b) return 0;//Se o 1o for menor que o 2o, então retorna um valor menor que 0;
+  else if(a<b) return -1; //Se os dois forem iguais, então retorna 0.
+}
+
+void OrdenaFloat(float *vetor, int n, int (*compar)(float, float)){ //como 'vetor' é um ponteiro. As mudanças feitas nele também ocorrerão em 'v',
+  int i,j;//contadores
+  float aux;//auxiliará na troca dos valores
+  for(i=0;i<n;i++){//percorrerá o vetor posição por posição
+    for(j=0;j<n;j++){//Quando o primeiro (i) passar por uma posição, este (j) percorre todo o vetor para comparar a sua posição 'j' com a posição 'i'.
+      if(compar(vetor[i],vetor[j])<0){//Compara os valores e verifica se o primeiro é menor que o segundo.
+        aux=vetor[i];//aux guarda o valor de v[i]
+        vetor[i]=vetor[j];//o valor de v[j] substitui o valor em v[i].
+        vetor[j]=aux;//O antigo valor de v[i] substitui o valor que há em v[j]. Desse modo, a troca dos valores de v[i] e v[j] é realizada.
+      }
+    }
+  }
+}
+
+int main(){
+  float *v,aux;
+  int n,i,j;
+
+  printf("Quantos valores serão lidos? ");
+  scanf("%d",&n);
+  
+  v = (float *) malloc(n*sizeof(float)); 
+  for(i=0;i<n;i++){
+    printf("Digite o valor real %d/%d: ",i+1,n);
+    scanf("%f",&v[i]);
+  }
+
+  OrdenaFloat(v,n, compara); // Ele será o responsável pela ordenação do vetor. Na ordem, v é o vetor a ser ordenado, n o tamanho do vetor e compara é a função de comparação.
+
+  printf("\nValores ordenados: \n");
+  for(i=0;i<n;i++){
+    printf("%.2f\n",v[i]); //Imprimindo os valores já ordenados.
+  }
+
+  free(v);
+  return 0;
+}
+
+
+===============================================================================
+===============================================================================
+
+Questão 17:
+
+Programa Q15:
+0.001154
+0.000783
+0.001406
+0.000951
+
+Programa Q16:
+0.000447
+0.000710
+0.000920
+0.000793
+
+**** Observa-se que, apesar das variações, o programa Q15, que possui o qsort, 
+tende a demorar mais que o programa Q16.
+
+===============================================================================
+===============================================================================
+
+Questão 18:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void somaVetores(int *v1, int *v2, int *vs, int n){
+  int i;
+  for(i=0;i<n;i++){
+    vs[i] = v1[i] + v2[i];
+  }
+}
+
+int main(){
+  int *v1,*v2,*v3,n,i;
+
+  printf("Quantas posições os vetores devem ter? ");
+  scanf("%d",&n);
+
+  v1 = (int *) malloc(n*sizeof(int));
+  v2 = (int *) malloc(n*sizeof(int));
+  v3 = (int *) malloc(n*sizeof(int));
+  for(i=0;i<n;i++){
+    v1[i] = rand() % 30 -10; //variar de -10 a 20
+    v2[i] = rand() % 30 -10; //variar de -10 a 20
+  }
+
+  somaVetores(v1,v2,v3,n);
+    printf("V1  +  V2  =  V3\n\n");
+  for(i=0;i<n;i++){
+    printf("%d  +  %d  =  %d\n", v1[i],v2[i],v3[i]);
+  }
+
+  return 0;
+}
+
+
+===============================================================================
+===============================================================================
+
+Questão 19:
+
+
+
+===============================================================================
+===============================================================================
+
+Questão 20:
+
+===============================================================================
+===============================================================================
+
+Questão 21:
+
+===============================================================================
+===============================================================================
