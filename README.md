@@ -1,3 +1,2 @@
-# Lista-de-Ponteiros
+# Projeto do Escultor 3D
 Aluno: Rodrigo de Lima Santana.
-Todas as respostas estão unidas no mesmo arquivo chamado Questoes.txt
