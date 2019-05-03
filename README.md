@@ -1,2 +1,2 @@
-# Projeto do Escultor 3D
+# Lista de Ponteiros
 Aluno: Rodrigo de Lima Santana.
